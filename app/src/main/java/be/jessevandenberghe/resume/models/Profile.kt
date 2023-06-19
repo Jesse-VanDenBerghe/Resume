@@ -5,17 +5,8 @@ data class Profile(
     val lastName: String,
     val title: String,
     val phone: String,
-    val email: String
-){
-    companion object{
-        val ME = Profile(
-            firstName = "Jesse",
-            lastName = "Van Den Berghe",
-            title = "Senior Android Developer",
-            phone = "+32487602603",
-            email = "jesse.vandenberghe95@gmail.com"
-        )
-    }
-
-    val fullName get() = "$firstName $lastName".trim()
+    val email: String,
+    val home: Address
+) {
+    val fullName by lazy { "$firstName $lastName" }
 }

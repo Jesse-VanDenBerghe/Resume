@@ -4,11 +4,13 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Call
 import androidx.compose.material.icons.rounded.Email
+import androidx.compose.material.icons.rounded.Home
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Shapes
 import androidx.compose.material3.Text
@@ -33,8 +35,8 @@ fun ProfileSection(
 ) {
     Column(
         modifier = modifier,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(4.dp)
+        horizontalAlignment = Alignment.Start,
+        verticalArrangement = Arrangement.SpaceEvenly
     ) {
         Image(
             painter = painterResource(id = R.drawable.img_profile),
@@ -42,12 +44,12 @@ fun ProfileSection(
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .padding(20.dp)
-                .aspectRatio(1f/1f)
+                .aspectRatio(1f / 1f)
                 .clip(CircleShape)
         )
         Text(
             text = profile.fullName,
-            color = MaterialTheme.colorScheme.onPrimary,
+            color = MaterialTheme.colorScheme.secondary,
             style = MaterialTheme.typography.headlineMedium.copy(
                 fontWeight = FontWeight.SemiBold
             )
@@ -63,14 +65,21 @@ fun ProfileSection(
         TextWithIcon(
             icon = Icons.Rounded.Call,
             text = profile.phone,
-            iconTint = MaterialTheme.colorScheme.onPrimary,
+            iconTint = MaterialTheme.colorScheme.secondary,
             textColor = MaterialTheme.colorScheme.onPrimary,
             textStyle = MaterialTheme.typography.bodyLarge
         )
         TextWithIcon(
             icon = Icons.Rounded.Email,
             text = profile.email,
-            iconTint = MaterialTheme.colorScheme.onPrimary,
+            iconTint = MaterialTheme.colorScheme.secondary,
+            textColor = MaterialTheme.colorScheme.onPrimary,
+            textStyle = MaterialTheme.typography.bodyLarge
+        )
+        TextWithIcon(
+            icon = Icons.Rounded.Home,
+            text = profile.home.formatted,
+            iconTint = MaterialTheme.colorScheme.secondary,
             textColor = MaterialTheme.colorScheme.onPrimary,
             textStyle = MaterialTheme.typography.bodyLarge
         )

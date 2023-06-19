@@ -42,12 +42,43 @@ fun TextWithIcon(
             tint = iconTint,
             modifier = Modifier.size(iconSize)
         )
-        Spacer(modifier = modifier.size(4.dp))
+        Spacer(modifier = modifier.size(8.dp))
         Text(
             text = text,
             style = textStyle,
             color = textColor,
-            modifier = Modifier.weight(1f)
+            modifier = Modifier.width(IntrinsicSize.Max)
+        )
+    }
+}
+
+@Composable
+fun TextWithIcon(
+    iconPainter: Painter,
+    text: String,
+    modifier: Modifier = Modifier,
+    iconSize: Dp = 16.dp,
+    iconTint: Color = MaterialTheme.colorScheme.onBackground,
+    textStyle: TextStyle = MaterialTheme.typography.bodyMedium,
+    textColor: Color = MaterialTheme.colorScheme.onBackground,
+) {
+    Row(
+        modifier = modifier
+            .width(IntrinsicSize.Min),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Icon(
+            painter = iconPainter,
+            contentDescription = null,
+            tint = iconTint,
+            modifier = Modifier.size(iconSize)
+        )
+        Spacer(modifier = modifier.size(8.dp))
+        Text(
+            text = text,
+            style = textStyle,
+            color = textColor,
+            modifier = Modifier.width(IntrinsicSize.Max)
         )
     }
 }
