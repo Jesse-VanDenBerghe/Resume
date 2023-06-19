@@ -50,9 +50,7 @@ fun ProfileSection(
         Text(
             text = profile.fullName,
             color = MaterialTheme.colorScheme.secondary,
-            style = MaterialTheme.typography.headlineMedium.copy(
-                fontWeight = FontWeight.SemiBold
-            )
+            style = MaterialTheme.typography.headlineLarge
         )
         Text(
             text = profile.title,

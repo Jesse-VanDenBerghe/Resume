@@ -5,7 +5,8 @@ import be.jessevandenberghe.resume.models.Resume
 class MyResume : Resume(
     profile = MyResume.Profile,
     skills = MyResume.Skills,
-    links = MyResume.Links
+    links = MyResume.Links,
+    bio = MyResume.Bio
 ) {
     companion object
 }

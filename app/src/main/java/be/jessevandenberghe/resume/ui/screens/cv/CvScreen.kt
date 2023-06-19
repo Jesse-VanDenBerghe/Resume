@@ -5,8 +5,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Divider
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
@@ -25,10 +27,11 @@ fun CvScreen(
                 .weight(3 / 10f)
                 .fillMaxHeight()
                 .shadow(
-                    elevation = 10.dp,
-                    clip = false
+                    elevation = 8.dp,
+                    clip = false,
+                    spotColor = Colors.DARK_BLUE,
+                    ambientColor = Colors.DARK_BLUE
                 )
-                .padding(end = 10.dp)
                 .background(Colors.DARK_BLUE)
                 .padding(16.dp)
 
@@ -68,8 +71,21 @@ fun CvScreen(
             modifier = Modifier
                 .weight(7 / 10f)
                 .fillMaxHeight()
+                .padding(32.dp)
         ) {
+
+            BioSection(
+                bio = resume.bio
+            )
+
+            Divider(
+                color = MaterialTheme.colorScheme.onBackground.copy(alpha = .2f),
+                thickness = 1.dp,
+                modifier = Modifier.padding(vertical = 20.dp)
+            )
 
         }
     }
 }
+
+
