@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
@@ -29,17 +28,17 @@ fun CvScreen(
                 .shadow(
                     elevation = 8.dp,
                     clip = false,
-                    spotColor = Colors.DARK_BLUE,
-                    ambientColor = Colors.DARK_BLUE
+                    spotColor = MaterialTheme.colorScheme.primary,
+                    ambientColor = MaterialTheme.colorScheme.primary
                 )
-                .background(Colors.DARK_BLUE)
+                .background(MaterialTheme.colorScheme.primary)
                 .padding(16.dp)
 
         ) {
             ProfileSection(
                 profile = resume.profile,
                 modifier = Modifier
-                    .weight(1 / 3f)
+                    .weight(2 / 6f)
                     .padding(16.dp)
                     .fillMaxWidth()
             )
@@ -51,7 +50,20 @@ fun CvScreen(
             SkillSection(
                 skillPackages = resume.skills,
                 modifier = Modifier
-                    .weight(1 / 3f)
+                    .weight(2 / 6f)
+                    .padding(16.dp)
+            )
+
+            Divider(
+                color = Colors.WHITE.copy(alpha = .2f),
+                thickness = 1.dp,
+                modifier = Modifier.padding(vertical = 20.dp)
+            )
+
+            HobbiesSection(
+                resume.hobbies,
+                modifier = Modifier
+                    .weight(1 / 6f)
                     .padding(16.dp)
             )
             Divider(
@@ -63,7 +75,7 @@ fun CvScreen(
             LinksSection(
                 resume.links,
                 modifier = Modifier
-                    .weight(1 / 3f)
+                    .weight(1 / 6f)
                     .padding(16.dp)
             )
         }
@@ -84,6 +96,19 @@ fun CvScreen(
                 modifier = Modifier.padding(vertical = 20.dp)
             )
 
+            HistorySection(
+                history = resume.employment
+            )
+
+            Divider(
+                color = MaterialTheme.colorScheme.onBackground.copy(alpha = .2f),
+                thickness = 1.dp,
+                modifier = Modifier.padding(vertical = 20.dp)
+            )
+
+            HistorySection(
+                history = resume.education
+            )
         }
     }
 }

@@ -6,7 +6,10 @@ class MyResume : Resume(
     profile = MyResume.Profile,
     skills = MyResume.Skills,
     links = MyResume.Links,
-    bio = MyResume.Bio
+    bio = MyResume.Bio,
+    employment = MyResume.Employment,
+    education = MyResume.Education,
+    hobbies = MyResume.Hobbies
 ) {
     companion object
 }

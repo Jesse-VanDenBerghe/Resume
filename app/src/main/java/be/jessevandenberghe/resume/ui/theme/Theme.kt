@@ -16,9 +16,21 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
-private val LightColorScheme = lightColorScheme(
+private val NormalColorScheme = lightColorScheme(
     primary = Colors.DARK_BLUE,
     secondary = Colors.ORANGE,
+    background = Color(0xFFFFFBFE),
+    surface = Color(0xFFFFFBFE),
+    onPrimary = Color.White,
+    onSecondary = Color.White,
+    onTertiary = Color.White,
+    onBackground = Color(0xFF1C1B1F),
+    onSurface = Color(0xFF1C1B1F),
+)
+
+private val WisemenColorScheme = lightColorScheme(
+    primary = Color.Black,
+    secondary = Color(0xFFccff00),
     background = Color(0xFFFFFBFE),
     surface = Color(0xFFFFFBFE),
     onPrimary = Color.White,
@@ -32,7 +44,7 @@ private val LightColorScheme = lightColorScheme(
 fun CVTheme(
     content: @Composable () -> Unit
 ) {
-    val colorScheme = LightColorScheme
+    val colorScheme = NormalColorScheme
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {

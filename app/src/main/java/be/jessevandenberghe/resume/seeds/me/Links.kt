@@ -14,10 +14,10 @@ internal val MyResume.Companion.Links: List<Link>
             icon = R.drawable.ic_github,
             name = "Github",
             link = "https://github.com/Jesse-VanDenBerghe"
-        ),
+        )/*,
         Link(
             icon = R.drawable.ic_instagram,
             name = "Instagram",
             link = "https://www.instagram.com/jessevandenberghe/"
-        )
+        )*/
     )
